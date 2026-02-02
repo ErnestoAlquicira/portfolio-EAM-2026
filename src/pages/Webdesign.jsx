@@ -41,9 +41,10 @@ export default function Webdesign() {
   return (
     <div className="bg-white text-black">
       <section className="max-w-4xl mx-auto px-6 pt-40 pb-24">
- <h1 className="text-4xl md:text-5xl font-normal mb-10">
-    Web Design
-  </h1>
+ <h1 className="font-serifDisplay text-4xl md:text-7xl mb-4">
+  Web Design
+</h1>
+
 
   <div className="space-y-6">
     <p className="text-lg leading-relaxed max-w-2xl">
@@ -194,7 +195,7 @@ export default function Webdesign() {
 <section className="max-w-6xl mx-auto px-6 pb-24">
   <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
   <img
-  src={img04}
+  src={img05}
   alt="Highly customized pharmaceutical program"
   className="w-full rounded-lg"
   loading="lazy"
@@ -203,7 +204,7 @@ export default function Webdesign() {
 
   {/* Text */}
   <div className="md:order-1">
-     <h2 className="text-2xl font-medium mb-4">
+     <h2 className=" text-2xl font-medium mb-4">
   Highly Customized Program
 </h2>
 
@@ -237,7 +238,7 @@ export default function Webdesign() {
   <div className="grid grid-cols-1 md:grid-cols-2 gap-12 items-start">
 
     <img
-  src={img05}
+  src={img04}
   alt="Bayer launch program"
   className="w-full rounded-lg"
   loading="lazy"

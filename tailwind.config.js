@@ -5,7 +5,12 @@ export default {
     "./src/**/*.{js,jsx}"
   ],
   theme: {
-    extend: {},
+   extend: {
+   fontFamily: {
+        sans: ['"IBM Plex Sans"', 'system-ui', 'sans-serif'],
+        serifDisplay: ['"DM Serif Display"', 'serif'],
+      },
+}
   },
   plugins: [],
 }

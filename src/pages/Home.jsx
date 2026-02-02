@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom"
+import heroImage from "../assets/img/main.jpg"
 import CommandNav from "../components/CommandNav"
 import { useEffect, useState } from "react"
 export default function Home() {
@@ -58,9 +59,9 @@ export default function Home() {
         <div
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: "url('/src/assets/img/main.jpg')",
-            filter: "brightness(0.6)",
-          }}
+  backgroundImage: `url(${heroImage})`,
+  filter: "brightness(0.6)",
+}}
         />
 
         <div className="absolute inset-0 flex flex-col items-center justify-center">

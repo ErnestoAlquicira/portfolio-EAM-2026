@@ -8,7 +8,7 @@ export default function Contact() {
           {/* Text column */}
           <div className="md:col-span-3">
             <h1 className="text-3xl md:text-4xl font-light mb-8">
-              Let’s work together
+              Contact
             </h1>
 
             <p className="text-lg leading-relaxed text-gray-700 max-w-xl mb-12">

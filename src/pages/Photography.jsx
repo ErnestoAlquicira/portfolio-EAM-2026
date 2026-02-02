@@ -1,19 +1,37 @@
-  import { useState, useRef, useEffect } from "react"
-  import heroPhoto from "/src/assets/img/photo/main.jpg"
-  const photos = [
-    { src: "/src/assets/img/photo/01.jpg" },
-    { src: "/src/assets/img/photo/02.jpg", span: true },
-    { src: "/src/assets/img/photo/03.jpg" },
-    { src: "/src/assets/img/photo/04.jpg" },
-    { src: "/src/assets/img/photo/05.jpg" },
-    { src: "/src/assets/img/photo/06.jpg", offset: true },
-    { src: "/src/assets/img/photo/07.jpg" },
-    { src: "/src/assets/img/photo/08.jpg", span: true },
-    { src: "/src/assets/img/photo/09.jpg" },
-    { src: "/src/assets/img/photo/10.jpg" },
-    { src: "/src/assets/img/photo/11.jpg" },
-    { src: "/src/assets/img/photo/12.jpg" },
-  ]
+ import { useState, useRef, useEffect } from "react"
+import heroPhoto from "../assets/img/photo/main.jpg"
+import photo01 from "../assets/img/photo/01.jpg"
+import photo02 from "../assets/img/photo/02.jpg"
+import photo03 from "../assets/img/photo/03.jpg"
+import photo04 from "../assets/img/photo/04.jpg"
+import photo05 from "../assets/img/photo/05.jpg"
+import photo06 from "../assets/img/photo/06.jpg"
+import photo07 from "../assets/img/photo/07.jpg"
+import photo08 from "../assets/img/photo/08.jpg"
+import photo09 from "../assets/img/photo/09.jpg"
+import photo10 from "../assets/img/photo/10.jpg"
+import photo11 from "../assets/img/photo/11.jpg"
+import photo12 from "../assets/img/photo/12.jpg"
+import photo13 from "../assets/img/photo/13.jpg"
+
+const photos = [
+  { src: photo01 },
+  { src: photo02, span: true },
+  { src: photo03 },
+  { src: photo04 },
+  { src: photo05 },
+  { src: photo06, offset: true },
+  { src: photo07 },
+  { src: photo13 },
+  { src: photo08, span: true },
+  { src: photo09 },
+  { src: photo10 },
+  { src: photo11 },
+  { src: photo12 },
+
+]
+
+
 
   function Photo({ src, alt, className = "" }) {
     const ref = useRef(null)
@@ -91,17 +109,18 @@
       >
       {/* Hero */}
 <section className="relative w-full overflow-hidden">
-  <img
-    src="/src/assets/img/photo/main.jpg"
-    alt="Photography hero"
-    className="
-      w-full
-      h-[70vh]
-      md:h-[65vh]
-      lg:h-[60vh]
-      object-cover
-    "
-  />
+ <img
+  src={heroPhoto}
+  alt="Photography hero"
+  className="
+    w-full
+    h-[70vh]
+    md:h-[65vh]
+    lg:h-[60vh]
+    object-cover
+  "
+/>
+
 </section>
 
 
@@ -110,10 +129,19 @@
        <section className="relative max-w-6xl mx-auto px-6 py-32">
   <div className="relative z-10 max-w-xl">
 
-    <p className="text-2xl md:text-3xl font-light leading-tight mb-6">
-      Observational work across objects, spaces, and surfaces.
-      Minimal intervention. Natural light where possible.
+    <p className="text-1xl md:text-6xl font-light leading-tight mb-12">
+      Observational
     </p>
+     <p className="text-1xl md:text-6xl font-light leading-tight mb-12">
+      Experience
+    </p>
+     <p className="text-1xl md:text-6xl font-light leading-tight mb-12">
+      Isolation
+    </p>
+    <p className="text-1xl md:text-6xl font-light leading-tight mb-0 italic">
+      Rhythm
+    </p>
+    
   </div>
 </section>
 
@@ -122,37 +150,36 @@
         <div ref={triggerRef} className="h-24 w-full" />
 
         {/* Gallery */}
-        <section className="max-w-[1600px] mx-auto px-6 py-32">
+        <section className="max-w-[1600px] mx-auto px-6 py-18">
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
     {photos.map((photo, i) => (
-      <div
-        key={i}
-        className={`
-          ${photo.span ? "lg:col-span-2" : ""}
-          ${photo.offset ? "mt-20" : ""}
-        `}
-      >
-        <Photo
-          src={photo.src}
-          alt={`Photography ${i + 1}`}
-        />
+  <div
+    key={i}
+    className={`
+      ${photo.span ? "lg:col-span-2" : ""}
+      ${photo.offset ? "mt-20" : ""}
+    `}
+  >
+    {photo.placeholder ? (
+      <div className="w-full aspect-[3/4] rounded-lg bg-neutral-800/20" />
+    ) : (
+      <Photo
+        src={photo.src}
+        alt={`Photography ${i + 1}`}
+      />
+    )}
+  </div>
+))}
 
-        {photo.caption && (
-          <p className="mt-3 text-xs text-white/60 max-w-sm">
-            {photo.caption}
-          </p>
-        )}
-      </div>
-    ))}
   </div>
 
         </section>
         {/* Exit dark mode */}
   <div ref={exitRef} className="h-24 w-full" />
   <section className="max-w-6xl mx-auto px-6 py-32">
-    <p className="text-lg leading-relaxed max-w-xl">
-      Closing sentence. Reflection. Or simply space.
-    </p>
+    <h1 className="text-lg leading-relaxed max-w-xl">
+      Fin
+    </h1>
   </section>
 
       </div>
