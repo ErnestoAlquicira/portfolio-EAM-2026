@@ -1,4 +1,5 @@
- import { useState, useRef, useEffect } from "react"
+
+import { useState, useRef, useEffect } from "react"
 import heroPhoto from "../assets/img/photo/main.jpg"
 import photo01 from "../assets/img/photo/01.jpg"
 import photo02 from "../assets/img/photo/02.jpg"
@@ -66,9 +67,10 @@ const photos = [
       />
     )
   }
+  
 
   export default function Photography() {
-    const [isDark, setIsDark] = useState(false)
+    const [isDark, setIsDark] = useState(true)
     const triggerRef = useRef(null)
     const exitRef = useRef(null)
 
@@ -108,46 +110,48 @@ const photos = [
         }`}
       >
       {/* Hero */}
-<section className="relative w-full overflow-hidden">
- <img
-  src={heroPhoto}
-  alt="Photography hero"
-  className="
-    w-full
-    h-[70vh]
-    md:h-[65vh]
-    lg:h-[60vh]
-    object-cover
-  "
-/>
+{/* Hero */}
+<section className="relative w-full h-[70vh] md:h-[65vh] lg:h-[85vh] overflow-hidden bg-black">
+  {/* Image */}
+  <img
+    src={heroPhoto}
+    alt="Photography hero"
+    className="absolute inset-0 w-full h-full object-cover"
+  />
 
+  {/* Gradient fade */}
+  <div
+    className="
+      absolute inset-0
+      bg-gradient-to-b
+      bg-gradient-to-b
+from-black/0 via-black/30 via-black/60 to-black
+
+    "
+  />
 </section>
 
+ {/* Theme trigger */}
+        <div ref={triggerRef} className="h-24 w-full" />
 
 
         {/* Intro */}
-       <section className="relative max-w-6xl mx-auto px-6 py-32">
-  <div className="relative z-10 max-w-xl">
+       <section className="relative max-w-6xl mx-auto px-32 py-24">
+  <div className="relative z-10 ">
 
     <p className="text-1xl md:text-6xl font-light leading-tight mb-12">
-      Observational
+      “There is no such thing as inaccuracy in a photograph. All photographs are accurate. None of them is the truth.”
     </p>
-     <p className="text-1xl md:text-6xl font-light leading-tight mb-12">
-      Experience
-    </p>
-     <p className="text-1xl md:text-6xl font-light leading-tight mb-12">
-      Isolation
-    </p>
-    <p className="text-1xl md:text-6xl font-light leading-tight mb-0 italic">
-      Rhythm
-    </p>
+    <p className="text-sm text-white/60 mb-36">
+               Richard Avedon
+              </p>
+    
     
   </div>
 </section>
 
 
-        {/* Theme trigger */}
-        <div ref={triggerRef} className="h-24 w-full" />
+       
 
         {/* Gallery */}
         <section className="max-w-[1600px] mx-auto px-6 py-18">

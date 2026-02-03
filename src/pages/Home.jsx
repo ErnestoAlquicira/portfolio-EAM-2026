@@ -1,9 +1,10 @@
 import { Link } from "react-router-dom"
 import heroImage from "../assets/img/main.jpg"
 import CommandNav from "../components/CommandNav"
+import MobileNav from "../components/MobileNav"
 import { useEffect, useState } from "react"
 export default function Home() {
-   const fullText = "el·e·ment"
+   const fullText = "element"
   const [displayText, setDisplayText] = useState("")
   const [showDefinition, setShowDefinition] = useState(false)
   useEffect(() => {
@@ -48,11 +49,9 @@ export default function Home() {
   }
 }, [])
   return (
-    <>
-<>
-  <CommandNav />
-  {/* existing hero */}
-</>
+  <>
+    <MobileNav />
+    <CommandNav />
 
       {/* Hero section */}
       <section className="relative h-screen w-full">
@@ -69,13 +68,15 @@ export default function Home() {
   {displayText}
 </h1>
 <p
-  className={`transition-opacity duration-700 text-white text-4xl px-32 py-4 font-light text-center ${
-    showDefinition ? "opacity-100" : "opacity-0"
-  }`}
+  className={`transition-opacity duration-700 text-white
+    text-lg md:text-4xl
+    px-6 md:px-32
+    py-4 font-light text-center
+    ${showDefinition ? "opacity-100" : "opacity-0"}
+  `}
 >
   <i>
-    a part or aspect of something abstract, especially one that is essential or
-    characteristic.
+    a part or aspect of something abstract, especially one that is essential.
   </i>
 </p>
 

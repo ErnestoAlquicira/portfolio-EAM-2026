@@ -2,7 +2,7 @@ import { Link } from "react-router-dom"
 
 export default function CommandNav() {
   return (
-    <div className="w-full bg-neutral-100 border-b border-black/10">
+  <div className="hidden md:block w-full bg-neutral-100 border-b border-black/10">
       <div className="grid grid-cols-12 items-center h-24">
 
         {/* Logo / Mark */}
