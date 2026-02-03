@@ -61,26 +61,35 @@ export default function Webdesign() {
       />
 
       {/* Header */}
-      <section className="relative z-10 max-w-4xl mx-auto px-6 pt-40 pb-24">
-        <h1 className="font-serifDisplay text-4xl md:text-7xl mb-4">
-          Web Design
-        </h1>
-        <p className="text-sm text-black/60 uppercase tracking-widest mb-8">
-          Selected enterprise & pharmaceutical projects
-        </p>
+      {/* Header */}
+<section className="relative z-10 max-w-6xl mx-auto px-6 pt-40 pb-32">
+  <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+    
+    <h1 className="
+      md:col-span-8
+      font-serifDisplay
+      text-5xl md:text-[6rem]
+      leading-[1]
+      tracking-tight
+    ">
+      Web Systems & Interfaces
+    </h1>
 
-        <div className="space-y-6">
-          <p className="text-lg leading-relaxed max-w-2xl">
-            I design and build interactive, responsive web modules for
-            pharmaceutical brands, working within strict branding, regulatory,
-            and technical constraints.
-          </p>
-          <p className="text-lg leading-relaxed max-w-2xl">
-            My work focuses on clarity, usability, and scalable systems across
-            products and campaigns.
-          </p>
-        </div>
-      </section>
+    <p className="
+      md:col-span-8
+      md:pt-3
+      text-sm
+      text-black/70
+      leading-relaxed
+    ">
+      Enterprise web design for pharmaceutical products, built to meet
+      regulatory, branding, and technical requirements.
+    </p>
+
+  </div>
+</section>
+
+
 
       {/* Projects */}
       <Reveal>
@@ -103,13 +112,19 @@ export default function Webdesign() {
                 Core PSL Group product reused across multiple programs.
               </p>
               <a
-                href="https://d.peerdirect.com/12399CQ01/12399CQ01_Hub/module1"
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm underline underline-offset-4"
-              >
-                View project (requires access)
-              </a>
+  href="https://d.peerdirect.com/12399CQ01/12399CQ01_Hub/module1"
+  target="_blank"
+  rel="noreferrer"
+  className="btn-plain btn-plain--sm btn-plain--arrow"
+>
+  <span className="btn-plain__inner">
+    <span className="btn-plain__arrow btn-plain__arrow--left" />
+    <span className="btn-plain__text">View project</span>
+    <span className="btn-plain__arrow btn-plain__arrow--right" />
+  </span>
+</a>
+
+
             </div>
           </div>
         </section>
@@ -135,13 +150,17 @@ export default function Webdesign() {
                 High-visibility campaign for a global pharmaceutical brand.
               </p>
               <a
-                href="https://d.md-fi.com/12044FI04/Modules/main?&pkey=10995738c847_5426_4f17_97d0_42"
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm underline underline-offset-4"
-              >
-                View project (requires access)
-              </a>
+  href="https://d.md-fi.com/12044FI04/Modules/main?&pkey=10995738c847_5426_4f17_97d0_42"
+  target="_blank"
+  rel="noreferrer"
+  className="btn-plain btn-plain--sm btn-plain--arrow"
+>
+  <span className="btn-plain__inner">
+    <span className="btn-plain__arrow btn-plain__arrow--left" />
+    <span className="btn-plain__text">View project</span>
+    <span className="btn-plain__arrow btn-plain__arrow--right" />
+  </span>
+</a>
             </div>
           </div>
         </section>
@@ -167,13 +186,19 @@ export default function Webdesign() {
                 Introduced a more dynamic interaction model into the ecosystem.
               </p>
               <a
-                href="https://d.md-fi.com/12348FI01/Modules/module1"
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm underline underline-offset-4"
-              >
-                View project (requires access)
-              </a>
+  href="https://d.md-fi.com/12348FI01/Modules/module1"
+  target="_blank"
+  rel="noreferrer"
+  className="btn-plain btn-plain--sm btn-plain--arrow"
+>
+  <span className="btn-plain__inner">
+    <span className="btn-plain__arrow btn-plain__arrow--left" />
+    <span className="btn-plain__text">View project</span>
+    <span className="btn-plain__arrow btn-plain__arrow--right" />
+  </span>
+</a>
+
+              
             </div>
           </div>
         </section>
@@ -201,13 +226,17 @@ export default function Webdesign() {
                 One of the most customized implementations on the platform.
               </p>
               <a
-                href="http://d.md-fi.com/12500FI11/Modules/main"
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm underline underline-offset-4"
-              >
-                View project (requires access)
-              </a>
+  href="http://d.md-fi.com/12500FI11/Modules/main"
+  target="_blank"
+  rel="noreferrer"
+  className="btn-plain btn-plain--sm btn-plain--arrow"
+>
+  <span className="btn-plain__inner">
+    <span className="btn-plain__arrow btn-plain__arrow--left" />
+    <span className="btn-plain__text">View project</span>
+    <span className="btn-plain__arrow btn-plain__arrow--right" />
+  </span>
+</a>
             </div>
           </div>
         </section>
@@ -235,13 +264,18 @@ export default function Webdesign() {
                 Bayer’s first program in this specialty.
               </p>
               <a
-                href="https://d.md-memo.com/11659MO02/11659MO02-p1/main?&pkey=998151ff845_588c_4438_b538_94n"
-                target="_blank"
-                rel="noreferrer"
-                className="text-sm underline underline-offset-4"
-              >
-                View project (requires access)
-              </a>
+  href="https://d.md-memo.com/11659MO02/11659MO02-p1/main?&pkey=998151ff845_588c_4438_b538_94n"
+  target="_blank"
+  rel="noreferrer"
+  className="btn-plain btn-plain--sm btn-plain--arrow"
+>
+  <span className="btn-plain__inner">
+    <span className="btn-plain__arrow btn-plain__arrow--left" />
+    <span className="btn-plain__text">View project</span>
+    <span className="btn-plain__arrow btn-plain__arrow--right" />
+  </span>
+</a>
+
             </div>
           </div>
         </section>

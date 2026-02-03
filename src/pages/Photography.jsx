@@ -52,6 +52,9 @@ const photos = [
       if (ref.current) observer.observe(ref.current)
       return () => observer.disconnect()
     }, [])
+useEffect(() => {
+  window.scrollTo({ top: 0, behavior: "instant" })
+}, [])
 
     return (
       <img
@@ -118,7 +121,7 @@ const photos = [
     alt="Photography hero"
     className="absolute inset-0 w-full h-full object-cover"
   />
-
+      <div ref={triggerRef} className="h-24 w-full" />
   {/* Gradient fade */}
   <div
     className="
@@ -132,15 +135,16 @@ from-black/0 via-black/30 via-black/60 to-black
 </section>
 
  {/* Theme trigger */}
-        <div ref={triggerRef} className="h-24 w-full" />
+  
 
 
         {/* Intro */}
-       <section className="relative max-w-6xl mx-auto px-32 py-24">
+       <section className="relative max-w-6xl mx-auto px-32 py-24 quote-invert">
+
   <div className="relative z-10 ">
 
     <p className="text-1xl md:text-6xl font-light leading-tight mb-12">
-      “There is no such thing as inaccuracy in a photograph. All photographs are accurate. None of them is the truth.”
+      “There is no such thing as inaccuracy in a photograph. All&nbsp;photographs are accurate. None of them is the truth.”
     </p>
     <p className="text-sm text-white/60 mb-36">
                Richard Avedon
@@ -181,9 +185,9 @@ from-black/0 via-black/30 via-black/60 to-black
         {/* Exit dark mode */}
   <div ref={exitRef} className="h-24 w-full" />
   <section className="max-w-6xl mx-auto px-6 py-32">
-    <h1 className="text-lg leading-relaxed max-w-xl">
-      Fin
-    </h1>
+   <h1 className="text-center font-serifDisplay text-4xl md:text-7xl mb-4">
+          Fin
+        </h1>
   </section>
 
       </div>

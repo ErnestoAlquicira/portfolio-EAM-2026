@@ -9,20 +9,66 @@ import img08 from "../assets/img/freelance/8.jpg"
 import img09 from "../assets/img/freelance/9.jpg"
 import img10 from "../assets/img/freelance/10.jpg"
 import img11 from "../assets/img/freelance/11.jpg"
+import heroWeb from "../assets/img/webdesign/hero.jpg"
 export default function Freelance() {
   return (
     <div className="bg-white text-black min-h-screen">
       {/* Intro */}
-      <section className="max-w-4xl mx-auto px-6 pt-40 pb-24">
-        <h1 className="text-4xl md:text-5xl font-light mb-10">
+      {/* Hero */}
+<section className="relative w-full overflow-hidden">
+  {/* Image */}
+  <img
+    src={heroWeb}
+    alt=""
+    className="
+      w-full
+      h-[65vh] md:h-[70vh] lg:h-[80vh]
+      object-cover
+    "
+  />
+
+  {/* Gradient fade to white */}
+  <div
+    className="
+      pointer-events-none
+      absolute inset-0
+      bg-gradient-to-b
+      from-white/0 via-white/40 to-white
+    "
+  />
+
+  {/* Text */}
+  <div className="
+    absolute inset-0
+    flex items-end
+  ">
+    <div className="
+      max-w-6xl
+      mx-auto
+      w-full
+      px-6
+      pb-24
+    ">
+      <div className="grid grid-cols-1 md:grid-cols-12 gap-8 items-start">
+        
+        <h1 className="
+          md:col-span-12
+          font-serifDisplay
+          text-5xl md:text-[6rem]
+          leading-[1]
+          tracking-tight
+          text-center
+        ">
           Freelance & Concepts
         </h1>
 
-        <p className="text-lg leading-relaxed max-w-2xl">
-          Independent visual work exploring typography, layout, motion, and
-          narrative beyond client constraints.
-        </p>
-      </section>
+        
+
+      </div>
+    </div>
+  </div>
+</section>
+
 
       {/* Gallery placeholder */}
       <section className="max-w-6xl mx-auto px-6 pb-40">

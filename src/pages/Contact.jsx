@@ -1,4 +1,4 @@
-import profilepic from "../assets/img/profile.jpg"
+import profilepic from "../assets/img/IMG_7942.jpg"
 export default function Contact() {
   return (
     <div className="min-h-screen bg-white text-black">
@@ -7,7 +7,7 @@ export default function Contact() {
 
           {/* Text column */}
           <div className="md:col-span-3">
-            <h1 className="text-3xl md:text-4xl font-light mb-8">
+            <h1 className="text-3xl md:text-8xl font-light mb-8">
               Contact
             </h1>
 

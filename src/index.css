@@ -10,3 +10,143 @@
     @apply font-serifDisplay tracking-tight;
   }
 }
+.quote-invert {
+  transition: filter 1000ms ease;
+}
+
+.quote-invert:hover {
+  filter:blur(2px);
+}
+.quote-invert img {
+  transition: filter 300ms ease;
+}
+.btn-plain {
+    --size: 0.9em;
+    --padding-x: 1.1947em;
+    --padding-y: 0.731em;
+    --margin-arrow: 0.225em;
+    --btn-color: var(--color-black);
+    --btn-active-color: var(--color-white);
+    position: relative;
+    display: inline-block;
+    padding: 0;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: rgba(0,0,0,0);
+    border: 1px solid #0000;
+    border-radius: 999em;
+    cursor: pointer;
+    overflow: hidden;
+    color: var(--btn-color);
+    letter-spacing: .1em;
+    text-transform: uppercase;
+    white-space: nowrap;
+    transition: color var(--transition-duration) var(--transition-easing);
+    will-change: opacity,transform
+}
+
+.btn-plain__inner {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    padding: var(--padding-y) var(--padding-x);
+    transform: translate3d(0, 0, 0)
+}
+
+.btn-plain__text {
+    transform: translate3d(0, 0, 0);
+    transition: translate .4s cubic-bezier(1, 0, 0, 1) 0s,padding-left .4s cubic-bezier(1, 0, 0, 1) 0s;
+    will-change: padding-left,translate;
+    font-size: 1.3em;
+}
+
+.btn-plain__arrow {
+    display: inline-block;
+    margin: .05em 0 0;
+    width: var(--size);
+    height: var(--size);
+    background-color: currentcolor;
+   mask: url("/src/assets/img/arrow-button.svg") center / contain no-repeat;
+-webkit-mask: url("/src/assets/img/arrow-button.svg") center / contain no-repeat;
+    will-change: rotate,translate
+}
+
+@media only screen and (max-width: 1280px) {
+    .btn-plain__arrow {
+        margin-top:0
+    }
+}
+
+.btn-plain__arrow--left {
+    position: absolute;
+    top: var(--padding-y);
+    left: var(--padding-x);
+    rotate: 45deg;
+    translate: calc((var(--size) + var(--padding-x))*-1 - 2px);
+    transition: translate .2s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s
+}
+
+.btn-plain__arrow--right {
+    margin-left: var(--margin-arrow);
+    transition: rotate .3s cubic-bezier(0.86, 0, 0.07, 1) .3s,translate .2s cubic-bezier(0.23, 1, 0.32, 1) .2s
+}
+
+.btn-plain--sm {
+    font-size: .5833333333rem
+}
+
+@media only screen and (max-width: 1680px) {
+    .btn-plain--sm {
+        font-size:.6rem
+    }
+}
+
+@media only screen and (max-width: 987px) {
+    .btn-plain--sm {
+        font-size:.6666666667rem
+    }
+}
+
+.btn-plain--sm .btn-plain__inner {
+    padding: .77em 1.4em
+}
+
+.btn-plain--lg {
+    font-size: var(--font-size-t-md)
+}
+
+.btn-plain--arrow:hover .btn-plain__text,.btn-plain--arrow:focus .btn-plain__text {
+    translate: calc(var(--size) + var(--margin-arrow)*2) 0 0;
+    transition: translate .6s cubic-bezier(0.86, 0, 0.07, 1) 0s
+}
+
+.btn-plain--arrow:hover .btn-plain__arrow--left,.btn-plain--arrow:focus .btn-plain__arrow--left {
+    translate: calc(var(--margin-arrow)*-1) 0 0;
+    transition: translate .3s cubic-bezier(0.23, 1, 0.32, 1) .3s
+}
+
+.btn-plain--arrow:hover .btn-plain__arrow--right,.btn-plain--arrow:focus .btn-plain__arrow--right {
+    translate: calc(var(--size) + var(--padding-x) + var(--margin-arrow)) 0 0;
+    rotate: 45deg;
+    transition: rotate .3s cubic-bezier(0.23, 1, 0.32, 1) 0s,translate .3s cubic-bezier(0.755, 0.05, 0.855, 0.06) 0s
+}
+
+.btn-plain--no-arrow:hover .btn-plain__text,.btn-plain--no-arrow:focus .btn-plain__text {
+    padding-left: calc(var(--size)*2);
+    translate: 0 0 0;
+    transition: translate .6s cubic-bezier(0.86, 0, 0.07, 1) 0s,padding-left .6s cubic-bezier(0.86, 0, 0.07, 1) 0s
+}
+
+.btn-plain--no-arrow:hover .btn-plain__arrow--left,.btn-plain--no-arrow:focus .btn-plain__arrow--left {
+    translate: 0;
+    transition: translate .3s cubic-bezier(0.23, 1, 0.32, 1) .3s
+}
+
+.btn-plain--white {
+    --btn-color: var(--color-white);
+    --btn-active-color: var(--color-black)
+}
