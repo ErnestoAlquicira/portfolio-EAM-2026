@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route } from "react-router-dom"
+import { Routes, Route } from "react-router-dom"
 import Layout from "./Layout"
 import Home from "./pages/Home"
 import Portfolio from "./pages/Portfolio"
@@ -10,19 +10,17 @@ import Contact from "./pages/Contact"
 
 function App() {
   return (
-    <BrowserRouter>
-      <Routes>
-        <Route element={<Layout />}>
-          <Route path="/" element={<Home />} />
-          <Route path="/portfolio" element={<Portfolio />} />
-          <Route path="/freelance" element={<Freelance />} />
-          <Route path="/webdesign" element={<Webdesign />} />
-          <Route path="/photography" element={<Photography />} />
-          <Route path="/postproduction" element={<Postproduction />} />
-          <Route path="/contact" element={<Contact />} />
-        </Route>
-      </Routes>
-    </BrowserRouter>
+    <Routes>
+      <Route element={<Layout />}>
+        <Route path="/" element={<Home />} />
+        <Route path="/portfolio" element={<Portfolio />} />
+        <Route path="/freelance" element={<Freelance />} />
+        <Route path="/webdesign" element={<Webdesign />} />
+        <Route path="/photography" element={<Photography />} />
+        <Route path="/postproduction" element={<Postproduction />} />
+        <Route path="/contact" element={<Contact />} />
+      </Route>
+    </Routes>
   )
 }
 

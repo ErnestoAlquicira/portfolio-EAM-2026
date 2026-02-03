@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom"
+
 export default function CommandNav() {
   return (
     <div className="w-full bg-neutral-100 border-b border-black/10">
@@ -17,14 +19,21 @@ export default function CommandNav() {
 
         {/* Nav */}
         <nav className="col-span-4 flex justify-center gap-12 text-sm uppercase tracking-widest">
-          <a href="/" className="hover:underline">Home</a>
-          <a href="/portfolio" className="hover:underline">Portfolio</a>
-          <a href="/contact" className="hover:underline">Contact</a>
+          <Link to="/" className="hover:underline">Home</Link>
+          <Link to="/portfolio" className="hover:underline">Portfolio</Link>
+          <Link to="/contact" className="hover:underline">Contact</Link>
         </nav>
 
-        {/* Social */}
+        {/* Social (external link stays <a>) */}
         <div className="col-span-1 flex items-center justify-center border-l border-black/10 h-full">
-          <a href="https://www.linkedin.com/in/ernestoalquicira/" className="text-sm">in</a>
+          <a
+            href="https://www.linkedin.com/in/ernestoalquicira/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-sm"
+          >
+            in
+          </a>
         </div>
 
         {/* Availability */}
