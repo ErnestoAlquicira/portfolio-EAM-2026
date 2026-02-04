@@ -59,7 +59,7 @@ export default function Freelance() {
           tracking-tight
           text-center
         ">
-          Freelance & Concepts
+          <i>Freelance & Concepts</i>
         </h1>
 
         

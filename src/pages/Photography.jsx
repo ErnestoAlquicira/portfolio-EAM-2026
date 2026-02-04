@@ -13,63 +13,78 @@ import photo09 from "../assets/img/photo/09.jpg"
 import photo10 from "../assets/img/photo/10.jpg"
 import photo11 from "../assets/img/photo/11.jpg"
 import photo12 from "../assets/img/photo/12.jpg"
+import photoHero from "../assets/img/photo/13.jpg"
 import photo13 from "../assets/img/photo/13.jpg"
 
 const photos = [
   { src: photo01 },
-  { src: photo02, span: true },
+  { src: photo02, ratio: "wide" },
   { src: photo03 },
   { src: photo04 },
   { src: photo05 },
-  { src: photo06, offset: true },
+  { src: photo06, ratio: "tall" },
   { src: photo07 },
-  { src: photo13 },
-  { src: photo08, span: true },
+  { src: photo08, ratio: "wide" },
   { src: photo09 },
   { src: photo10 },
   { src: photo11 },
   { src: photo12 },
-
 ]
 
 
 
-  function Photo({ src, alt, className = "" }) {
-    const ref = useRef(null)
-    const [visible, setVisible] = useState(false)
 
-    useEffect(() => {
-      const observer = new IntersectionObserver(
-        ([entry]) => {
-          if (entry.isIntersecting) {
-            setVisible(true)
-            observer.disconnect()
-          }
-        },
-        { threshold: 0.2 }
-      )
 
-      if (ref.current) observer.observe(ref.current)
-      return () => observer.disconnect()
-    }, [])
-useEffect(() => {
-  window.scrollTo({ top: 0, behavior: "instant" })
-}, [])
+  function Photo({ src, alt, ratio = "standard" }) {
+  const ref = useRef(null)
+  const [visible, setVisible] = useState(false)
 
-    return (
-      <img
-        ref={ref}
-        src={src}
-        alt={alt}
-        className={`
-          w-full rounded-lg
-          transition-all duration-700 ease-out
-          ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
-          ${className}
-        `}
-      />
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true)
+          observer.disconnect()
+        }
+      },
+      { threshold: 0.2 }
     )
-  }
+
+    if (ref.current) observer.observe(ref.current)
+    return () => observer.disconnect()
+  }, [])
+
+  const ratioClass =
+    ratio === "wide"
+      ? "aspect-[16/9]"
+      : ratio === "tall"
+      ? "aspect-[3/5]"
+      : "aspect-[3/4]"
+
+  return (
+    <div
+      ref={ref}
+      className={`
+        overflow-hidden rounded-lg
+        transition-all duration-700 ease-out
+        ${visible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-6"}
+      `}
+    >
+      <img
+  src={src}
+  alt={alt}
+  className={`
+    w-full h-full object-cover ${ratioClass}
+    transition-all duration-500 ease-out
+    hover:brightness-110
+  `}
+/>
+
+    </div>
+  )
+}
+
+
   
 
   export default function Photography() {
@@ -139,14 +154,14 @@ from-black/0 via-black/30 via-black/60 to-black
 
 
         {/* Intro */}
-       <section className="relative max-w-6xl mx-auto px-32 py-24 quote-invert">
+       <section className="relative max-w-6xl mx-auto px-32 py-24 quote-invert text-center">
 
   <div className="relative z-10 ">
 
     <p className="text-1xl md:text-6xl font-light leading-tight mb-12">
-      “There is no such thing as inaccuracy in a photograph. All&nbsp;photographs are accurate. None of them is the truth.”
+      <i>“There is no such thing as inaccuracy in a photograph. All&nbsp;photographs are accurate. None of them is the truth.”</i>
     </p>
-    <p className="text-sm text-white/60 mb-36">
+    <p className="text-sm text-white/60 mb-18">
                Richard Avedon
               </p>
     
@@ -156,37 +171,41 @@ from-black/0 via-black/30 via-black/60 to-black
 
 
        
+<section className="max-w-[1600px] mx-auto px-6 pt-12 pb-8">
+  <div className="overflow-hidden rounded-lg">
+   <img
+  src={photoHero}
+  alt="Photography series introduction"
+  className="
+    w-full object-cover aspect-[21/9]
+    transition-all duration-500 ease-out
+    hover:brightness-110
+  "
+/>
+  </div>
+</section>
 
         {/* Gallery */}
-        <section className="max-w-[1600px] mx-auto px-6 py-18">
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12">
+        <section className="max-w-[1600px] mx-auto px-6 py-24">
+  <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 auto-rows-[1fr] gap-12">
     {photos.map((photo, i) => (
-  <div
-    key={i}
-    className={`
-      ${photo.span ? "lg:col-span-2" : ""}
-      ${photo.offset ? "mt-20" : ""}
-    `}
-  >
-    {photo.placeholder ? (
-      <div className="w-full aspect-[3/4] rounded-lg bg-neutral-800/20" />
-    ) : (
-      <Photo
-        src={photo.src}
-        alt={`Photography ${i + 1}`}
-      />
-    )}
+      <div
+        key={i}
+        className={`
+          ${photo.layout === "wide" ? "lg:col-span-2" : ""}
+        `}
+      >
+        <Photo src={photo.src} alt={`Photography ${i + 1}`} />
+      </div>
+    ))}
   </div>
-))}
+</section>
 
-  </div>
-
-        </section>
         {/* Exit dark mode */}
-  <div ref={exitRef} className="h-24 w-full" />
+
   <section className="max-w-6xl mx-auto px-6 py-32">
    <h1 className="text-center font-serifDisplay text-4xl md:text-7xl mb-4">
-          Fin
+          <i>Fin </i>
         </h1>
   </section>
 

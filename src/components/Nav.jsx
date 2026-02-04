@@ -27,7 +27,7 @@ const disableHide = isDarkPage
 
   const navBg =
   isDarkPage
-    ? "bg-black/70 backdrop-blur-md"
+    ? "bg-black/30 backdrop-blur-md"
     : "bg-white/70 backdrop-blur-md"
 
 
