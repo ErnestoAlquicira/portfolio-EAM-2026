@@ -3,6 +3,7 @@ import webImg from "../assets/img/portfolio/1.jpg"
 import freelanceImg from "../assets/img/portfolio/2.jpg"
 import photoImg from "../assets/img/portfolio/3.jpg"
 import motionImg from "../assets/img/portfolio/4.jpg"
+import img05 from "../assets/img/portfolio/5.jpg"
 
 import "./portfolio.css"
 import { Link } from "react-router-dom"
@@ -40,7 +41,7 @@ useEffect(() => {
    <article className="grid-item flex flex-col gap-4" data-project="project-1">
    <Link to="/Webdesign" className="group block">
   <div className="image-wrap transition-opacity duration-500 group-hover:opacity-90">
-    <img src={webImg} alt="Web design" />
+    <img src={img05} alt="Web design" />
   </div>
 </Link>
   <Link
@@ -50,24 +51,7 @@ useEffect(() => {
   <h3 className="text-sm font-medium mt-3">web design</h3>
   </Link>
 </article>
- <article className="grid-item flex flex-col gap-4" data-project="project-2">
-  <Link to="/Photography" className="group block">
-  <div className="image-wrap transition-opacity duration-500 group-hover:opacity-90">
-    <img src={photoImg} alt="Web design" />
-  </div>
-</Link>
-   <Link
-  to="/Photography"
-  className="text-sm font-medium transition-opacity duration-300 hover:opacity-60"
->
-  <h3 className="text-sm font-medium mt-3">photography</h3>
-  </Link>
-</article>
-
-
-</section>
-   <section ref={row2Ref} className="portfolio-grid">
- <article className="grid-item flex flex-col gap-4" data-project="project-3">
+<article className="grid-item flex flex-col gap-4" data-project="project-3">
   <Link to="/Freelance" className="group block">
   <div className="image-wrap transition-opacity duration-500 group-hover:opacity-90">
     <img src={freelanceImg} alt="Web design" />
@@ -81,6 +65,24 @@ useEffect(() => {
   </Link>
 </article>
 
+
+
+</section>
+   <section ref={row2Ref} className="portfolio-grid">
+ 
+ <article className="grid-item flex flex-col gap-4" data-project="project-2">
+  <Link to="/Photography" className="group block">
+  <div className="image-wrap transition-opacity duration-500 group-hover:opacity-90">
+    <img src={photoImg} alt="Web design" />
+  </div>
+</Link>
+   <Link
+  to="/Photography"
+  className="text-sm font-medium transition-opacity duration-300 hover:opacity-60"
+>
+  <h3 className="text-sm font-medium mt-3">photography</h3>
+  </Link>
+</article>
   <article className="grid-item flex flex-col gap-4" data-project="project-4">
     <Link to="/Postproduction" className="group block">
   <div className="image-wrap transition-opacity duration-500 group-hover:opacity-90">
